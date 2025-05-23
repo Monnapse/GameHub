@@ -1,10 +1,9 @@
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-  res.send('Welcome to the home page!');
-});
+router.use('/', require('./swagger'));
 
-router.get('/users', require('./users'));
-router.get('/games', require('./games'));
+router.use('/users', require('./users'));
+
+router.use('/games', require('./games'));
 
 module.exports = router;
