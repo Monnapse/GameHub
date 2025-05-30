@@ -4,11 +4,14 @@ const router = express.Router();
 
 const gamesController = require('../controllers/games');
 
+const { isAuthenticated } = require('../middleware/authenticate');
+
+
 router.get('/', gamesController.getAll);
 
 router.get('/:id', gamesController.get);
 
-router.post('/', [
+router.post('/', isAuthenticated, [
     body("name").notEmpty().withMessage("Game name is required"),
     body("developer").notEmpty().withMessage("Developer is required"),
     body("publisher").notEmpty().withMessage("Publisher is required"),
@@ -18,7 +21,7 @@ router.post('/', [
     body("cost").isNumeric().withMessage("Cost must be a number")
 ], gamesController.create);
 
-router.put('/:id', [
+router.put('/:id', isAuthenticated, [
     body("name").notEmpty().withMessage("Game name is required"),
     body("developer").notEmpty().withMessage("Developer is required"),
     body("publisher").notEmpty().withMessage("Publisher is required"),
@@ -28,6 +31,6 @@ router.put('/:id', [
     body("cost").isNumeric().withMessage("Cost must be a number")
 ], gamesController.update);
 
-router.delete('/:id', gamesController.deleteGame);
+router.delete('/:id', isAuthenticated, gamesController.deleteGame);
 
 module.exports = router;
