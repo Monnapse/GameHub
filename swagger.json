@@ -8,8 +8,8 @@
   "host": "https://gamehub-stab.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/users/": {

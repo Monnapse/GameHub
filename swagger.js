@@ -5,8 +5,8 @@ const doc = {
         title: 'Games Hub Api',
         description: 'Games Hub Api Documentation',
     },
-    host: 'localhost:3000',
-    schemes: ['http', 'https'],
+    host: 'https://gamehub-stab.onrender.com',
+    schemes: ['https', 'http'],
 }
 
 const outputFile = './swagger.json';
