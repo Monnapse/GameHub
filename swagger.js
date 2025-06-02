@@ -5,7 +5,7 @@ const doc = {
         title: 'Games Hub Api',
         description: 'Games Hub Api Documentation',
     },
-    host: 'https://gamehub-stab.onrender.com',
+    host: 'gamehub-stab.onrender.com',
     schemes: ['https', 'http'],
 }
 
